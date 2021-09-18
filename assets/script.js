@@ -18,4 +18,12 @@ function checkTime(){
 }
 
 
+function handleEventSave(event) {
+    event.preventDefault();
+
+    var userEvent = $(".form-control");
+    
+}
+
+
 checkTime();

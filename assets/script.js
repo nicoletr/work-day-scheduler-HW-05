@@ -1,16 +1,21 @@
 var currentDay = moment().format("dddd, MMMM Do YYYY");
 $("#current-day").text(currentDay);
 
+//TODO: Finish function
 function checkTime(){
-    var timeOfDay = $(".form-control")
-    
-    if (moment()) {
-        timeOfDay.addClass("present");
-    } else if (moment()) {
-        timeOfDay.addClass("past");
+    var timeSlot = $(".form-control");
+    var currentHour = moment().format("hh");
+   // var pastHour =
+
+    if (currentHour) {
+        timeSlot.addClass("present");
+    } else if (pastHour) {
+        timeSlot.addClass("past");
     } else {
-        timeOfDay.addClass("future");
+        timeSlot.addClass("future");
     }
+
 }
+
 
 checkTime();

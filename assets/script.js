@@ -9,9 +9,6 @@ let currentTime = function() {
     $("#current-time").text(moment().format("h:mm:ssa"));
 }
 
-// var currentTime = moment().format("h:mm:ssa");
-// $("#current-time").text(currentTime);
-
 //TODO: Function to check time and determine is timeslot is in the past, present, or future
 function checkTime(){
     //Variables to determine the time, and what hour the time block is showing
@@ -19,19 +16,16 @@ function checkTime(){
     var currentHour = moment().format("ha");
     var time = $(".hour").text();
 
-        //If the current hour of the day matches the hour of the time block, add .present, to turn background red
+        //If the current hour of the day matches the hour of the time block, add .past, to turn background grey
         if (currentHour < time) {
             timeBlock.addClass("past");
         } 
-        //If the current hour of the day is lower than the hour of the time block, add .past, to turn background grey
+        //If the current hour of the day is lower than the hour of the time block, add .present, to turn background red
         else if (currentHour === time) {
-            timeBlock.removeClass("past");
             timeBlock.addClass("present");
         }
         //In case of anything else, add .future, to turn the background green
         else {
-            timeBlock.removeClass("present");
-            timeBlock.removeClass("past");
             timeBlock.addClass("future");
         } 
 
@@ -39,7 +33,7 @@ function checkTime(){
     console.log(currentHour);
 }
 
-
+//TODO: Function is not responding on first click
 //Function to save the user input to localStorage
 function handleEventSave(event) {
     //Directs event to the specific button clicked

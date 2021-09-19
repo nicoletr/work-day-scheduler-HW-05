@@ -4,6 +4,10 @@ var saveBtn = $(".saveBtn");
 var currentDay = moment().format("dddd, MMMM Do YYYY");
 $("#current-day").text(currentDay);
 
+//Shows current time of day
+var currentTime = moment().format("h:mma");
+$("#current-time").text(currentTime);
+
 //TODO: Function to check time and determine is timeslot is in the past, present, or future
 function checkTime(){
     //Variables to determine the time, and what hour the time block is showing

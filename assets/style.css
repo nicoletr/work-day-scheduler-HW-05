@@ -30,6 +30,10 @@ textarea {
   border-radius: 15px;
 }
 
+.container {
+  padding-bottom: 50px;
+}
+
 .row {
   white-space: pre-wrap;
   height: 80px;
@@ -64,7 +68,7 @@ textarea {
   color: white;
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
-  transition: all 0.3s ease-in-out;
+.saveBtn:hover {
+  font-size: 25px;
+  transition: all 0.1s ease-in-out;;
 }

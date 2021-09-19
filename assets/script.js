@@ -6,16 +6,19 @@ $("#current-day").text(currentDay);
 //TODO: Function to check time and determine is timeslot is in the past, present, or future
 function checkTime(){
     var timeSlot = $(".form-control");
-    var currentHour = moment("H");
+    var currentHour = moment().format("ha");
+    var time = $(".time-slot").innerHTML
 
-    if (currentHour) {
+
+    if (time === currentHour) {
         timeSlot.addClass("present");
-    } else if (pastHour) {
-        timeSlot.addClass("past");
-    } else {
-        timeSlot.addClass("future");
+    // } else if () {
+    //     timeSlot.addClass("past");
+    // } else {
+    //     timeSlot.addClass("future");
     }
-
+    
+    console.log(time);
 }
 
 //TODO: Function to save the event input into timeslot

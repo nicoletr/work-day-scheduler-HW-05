@@ -5,8 +5,12 @@ var currentDay = moment().format("dddd, MMMM Do YYYY");
 $("#current-day").text(currentDay);
 
 //Shows current time of day
-var currentTime = moment().format("h:mma");
-$("#current-time").text(currentTime);
+let currentTime = function() {
+    $("#current-time").text(moment().format("h:mm:ssa"));
+}
+
+// var currentTime = moment().format("h:mm:ssa");
+// $("#current-time").text(currentTime);
 
 //TODO: Function to check time and determine is timeslot is in the past, present, or future
 function checkTime(){
@@ -38,20 +42,18 @@ function checkTime(){
 
 //Function to save the user input to localStorage
 function handleEventSave(event) {
-    //Prevents the default form submission from happening
-    event.preventDefault();
     //Directs event to the specific button clicked
     saveBtn = $(event.target);
     
     //Picks up the values of the div so computer knows what to save
-    var text = $(saveBtn).siblings(".user-input").val();
-    var time = $(saveBtn).parent().attr("id");
+    var text = saveBtn.siblings(".user-input").val();
+    var time = saveBtn.parent().attr("id");
     
     //The input from the form will be saved into localStorage, key will be the time, and value the input text
     localStorage.setItem(time, text);
 }
 
-//TODO: Function to get saved items from localStorage
+//Function to get saved items from localStorage
 function getStoredItems () {
     $("#8am .user-input").val(localStorage.getItem("8am"));
     $("#9am .user-input").val(localStorage.getItem("9am"));
@@ -68,6 +70,9 @@ function getStoredItems () {
 
 
 //TODO: Fix up display for smaller screens
+
+currentTime();
+setInterval(currentTime, 1000);
 
 checkTime();
 

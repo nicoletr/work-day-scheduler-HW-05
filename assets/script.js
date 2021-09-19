@@ -13,14 +13,11 @@ function checkTime(){
 
         //If the current hour of the day matches the hour of the time block, add .present, to turn background red
         if (currentHour < time) {
-            timeBlock.removeClass("future");
-            timeBlock.removeClass("present");
             timeBlock.addClass("past");
         } 
         //If the current hour of the day is lower than the hour of the time block, add .past, to turn background grey
         else if (currentHour === time) {
             timeBlock.removeClass("past");
-            timeBlock.removeClass("future");
             timeBlock.addClass("present");
         }
         //In case of anything else, add .future, to turn the background green
@@ -39,6 +36,7 @@ function checkTime(){
 function handleEventSave(event) {
     //Prevents the default form submission from happening
     event.preventDefault();
+    //Directs event to the specific button clicked
     saveBtn = $(event.target);
     
     //Picks up the values of the div so computer knows what to save
@@ -64,6 +62,11 @@ function getStoredItems () {
 
 }
 
-getStoredItems();
-saveBtn.on("click", handleEventSave);
+
+//TODO: Fix up display for smaller screens
+
 checkTime();
+
+getStoredItems();
+
+saveBtn.on("click", handleEventSave);

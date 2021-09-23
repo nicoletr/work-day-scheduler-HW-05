@@ -11,7 +11,8 @@ A simple workday calendar which functions as below
 - When the hour in in the future, the timeslot colour is green
 
 # Screenshot
+![Screenshot of workday planner application](assets/images/application-screenshot.png)
 
 # Links
-Github: <br> 
+Github: https://github.com/nicoletr/work-day-scheduler-HW-05 <br> 
 Deployed Application: https://nicoletr.github.io/work-day-scheduler-HW-05/
